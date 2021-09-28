@@ -2,18 +2,18 @@ server:
    port: 9191
 spring:
   application:
-   name: Api-Gateway
-cloud:
- gateway:
+   name: API-GATEWAY
+  cloud:
+   gateway:
     routes:
-      -  id: USER-SERVICE
-         url: lb://USER-SERVICE
-         perdicates:
-          - Path=/users/**
+      - id: USER-SERVICE
+        uri: lb://USER-SERVICE
+        predicates:
+           - Path=/users/**
       -  id: DEPARTMENT-SERVICE
-         url: lb://DEPARTMENT-SERVICE
-         perdicates:
-          - Path=/departments/**
+         uri: lb://DEPARTMENT-SERVICE
+         predicates: 
+           - Path=/departments/**
 
 
 eureka:
